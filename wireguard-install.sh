@@ -69,7 +69,8 @@ if [ ! -f "$WG_CONFIG" ]; then
         echo "   1) Cloudflare"
         echo "   2) Google"
         echo "   3) OpenDNS"
-        read -p "DNS [1-3]: " -e -i 1 DNS_CHOICE
+        echo "   4) AdGuard"
+        read -p "DNS [1-4]: " -e -i 1 DNS_CHOICE
 
         case $DNS_CHOICE in
             1)
@@ -80,6 +81,9 @@ if [ ! -f "$WG_CONFIG" ]; then
             ;;
             3)
             CLIENT_DNS="208.67.222.222,208.67.220.220"
+            ;;
+            4)
+            CLIENT_DNS="176.103.130.130,176.103.130.131"
             ;;
         esac
     fi
